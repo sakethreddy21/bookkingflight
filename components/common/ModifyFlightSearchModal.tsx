@@ -10,10 +10,8 @@ const ModifyFlightSearch = ({
 }:any) => {
   const theme = useTheme();
 
-  const handleDrawerClose = (event:any, reason:any) => {
-    // if (reason && reason === 'backdropClick') {
-    //   return;
-    // }
+  const handleDrawerClose = () => {
+    console.log('djd')
     setDrawerOpen(false);
   };
 const searchParams = useSearchParams()
@@ -29,7 +27,7 @@ const [fromName, setFrom]=useState(searchParams.get('fromName') || '')
 
     >
      <div className='h-[225px]  w-[100%] flex justify-center items-center rounded-xl px-40 shadow-sm z-[9999] ' >
-        <SearchBar show={false} />
+        <SearchBar show={false}  handleClose={handleDrawerClose}/>
      </div>
     </AddDetailsDrawer>
   );

@@ -13,7 +13,7 @@ export default function Airport() {
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsLoading(false); // Stop loading after 5 seconds
-        }, 0);
+        }, 5000);
 
         // Cleanup the timer on component unmount
         return () => clearTimeout(timer);

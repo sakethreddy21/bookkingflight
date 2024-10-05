@@ -3,6 +3,7 @@ import { Separator } from "@/components/ui/separator";
 import { Button } from '@/components/ui/button';
 import { Search , X} from 'lucide-react';
 import ModifyFlightSearch from './ModifyFlightSearchModal';
+import { useRouter } from 'next/navigation';
 
 const Topbar = ({progress, departure, returnDate, fromCode, fromName, toCode, toName}:any) => {
     const truncateString = (str: string | null, maxLength: number) => {
@@ -17,8 +18,9 @@ const Topbar = ({progress, departure, returnDate, fromCode, fromName, toCode, to
         return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
     };
     const [drawerOpen, setDrawerOpen] = useState(false);
+    const router = useRouter()
   return (
-    <div className={`w-full h-[100px] ${progress === 100 && 'border-b-[2px] border-[#E6E8EB]'}  ${drawerOpen? 'hidden':'flex px-[240px] p-4 pt-8'} justify-between z-[10] bg-white`}>
+    <div className={`w-full h-[100px] ${progress === 100 && 'border-b-[2px] border-[#E6E8EB]'}  ${drawerOpen? 'hidden':'flex px-[240px] p-4 pt-8'} justify-between z-[9999] bg-white`}>
     <div className='flex flex-row w-[662px] h-[50px] rounded-3xl border-2 border-[#E6E8EB] pl-5 px-2 p-2 justify-between items-center'>
         <div className='flex gap-x-1'>
             <span className='text-[16px] font-medium text-[#001F1D]'>{fromCode}</span> 
@@ -40,7 +42,7 @@ className='w-[34px] h-[34px] p-2 flex justify-center items-center bg-[#E5EBEB]  
 </Button>
 
     </div>
-    <Button 
+    <Button onClick={()=>{router.push('/')}} 
 className='w-[44px] h-[44px] p-1 bg-[#FFFFFF] flex justify-center items-center border-[#E6E8EB] border-[1px] hover:bg-[#FFFFFF] rounded-full' >
 <X  color='#787B80'/> 
 </Button>

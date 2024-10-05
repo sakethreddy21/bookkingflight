@@ -10,9 +10,10 @@ import { useSearchParams } from 'next/navigation';
 
 interface searchBarProps{
   show?:Boolean
+  handleClose?:Function
 }
 
-const SearchBar = ({show=true}:searchBarProps) => {
+const SearchBar = ({show=true, handleClose}:searchBarProps) => {
   const router = useRouter(); // Next.js router for navigation
 const searchParams= useSearchParams()
   const [fromAirport, setFromAirport] = useState(searchParams.get('fromCode') || '');
@@ -62,7 +63,9 @@ const searchParams= useSearchParams()
       return: returnDate ? returnDate.toISOString().split('T')[0] : '', // Optional return date
     }).toString();
 
-    // Push the query params to the URL
+    if(handleClose){
+      handleClose()
+    }
     router.push(`/airports?${queryParams}`);
   };
 

@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Check, ChevronsUpDown } from "lucide-react";
+import { Check, ChevronsUpDown , ChevronDown} from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
   Command,
@@ -99,7 +99,7 @@ export default function AirportCombobox({
               placeholderText
             )}
           </div>
-          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+          <ChevronDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[260px] p-0">
@@ -132,7 +132,19 @@ export default function AirportCombobox({
                         value === airport.code ? "opacity-100" : "opacity-0"
                       )}
                     />
-                    {`${airport.city}, ${airport.country}`}
+                    <div className="flex flex-row w-full justify-between">
+                      <div className="flex flex-col"> 
+                        <div className="text-[#2B2B2B] text-[14px] " >
+{`${airport.city},` }
+                        </div>
+                        <div className="text-[#787B80] text-[12px]">
+                       {` ${airport.country}`}
+                        </div>
+                      </div >
+                      <div className="text-[#2B2B2B] text-[14px]" >{` ${airport.code}`}</div>
+                      
+                    </div>
+                    
                   </CommandItem>
                 ))
               ) : (

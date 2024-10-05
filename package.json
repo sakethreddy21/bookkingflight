@@ -12,6 +12,7 @@
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@mui/joy": "^5.0.0-beta.48",
+    "@mui/lab": "^6.0.0-beta.10",
     "@mui/material": "^6.1.2",
     "@nextui-org/react": "^2.4.8",
     "@nextui-org/spinner": "^2.0.34",
