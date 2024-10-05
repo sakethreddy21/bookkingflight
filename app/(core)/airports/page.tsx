@@ -3,11 +3,14 @@
 import React, { useEffect, useState } from 'react';
 
 import AirportDetailsCard from '../../../components/core/airportDetailsCard';
-import { flightDetails } from '@/lib/constants';
 import Loading from '../../../components/core/loadingContent'
+import { useFlightData } from "@/hooks/dataFetching";
+
+
 export default function Airport() {
     // State to manage loading status
     const [isLoading, setIsLoading] = useState(true);
+    const { flights } = useFlightData();
 
     // Set a timer to stop loading after 5 seconds
     useEffect(() => {
@@ -27,7 +30,7 @@ export default function Airport() {
 
 
                 <div>Showing 356 of 767 results</div>
-                <AirportDetailsCard flightData={flightDetails} />
+                <AirportDetailsCard flightData={flights} />
 
 
             </div>}

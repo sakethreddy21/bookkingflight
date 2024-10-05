@@ -7,7 +7,7 @@ const AirportDetailsCard = ({ flightData }: any) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   return (
     <div className='flex flex-col gap-y-7'>
-      {flightData.flights.map((flight: any, index: any) => (
+      {flightData.map((flight: any, index: any) => (
         <div className='w-full h-[184px] border-[#E6E8EB] border-2 rounded-lg flex flex-row'>
           <div className='w-[80%] h-[184px] border-r-[#E6E8EB] border-r-2 p-6 px-8 flex flex-col justify-between'>
             <div className='w-full flex flex-row justify-between'>
