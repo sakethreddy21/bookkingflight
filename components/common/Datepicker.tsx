@@ -7,15 +7,12 @@ import { Calendar as CalendarIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Calendar } from "@/components/ui/calendar"
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover"
+import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover"
 
 export function DatePicker({ text, selectedDate, setSelectedDate, departureDate }: any) {
   // Initialize date with 'undefined' to comply with the selected prop type
   const [date, setDate] = React.useState<Date | undefined>(selectedDate)
+  const [popoverOpen, setPopoverOpen] = React.useState(false)  // Control popover open state
 
   const today = new Date()
 
@@ -35,8 +32,14 @@ export function DatePicker({ text, selectedDate, setSelectedDate, departureDate 
     return isBefore(date, today)
   }
 
+  // Handle date selection and close popover
+  const handleSelect = (selectedDate: Date | undefined) => {
+    setDate(selectedDate)
+    setPopoverOpen(false)  // Close popover on date select
+  }
+
   return (
-    <Popover>
+    <Popover open={popoverOpen} onOpenChange={setPopoverOpen}>
       <PopoverTrigger asChild>
         <Button
           variant={"outline"}
@@ -44,6 +47,7 @@ export function DatePicker({ text, selectedDate, setSelectedDate, departureDate 
             "w-[210px] h-[60px] justify-start text-left font-normal",
             !date && "text-muted-foreground"
           )}
+          onClick={() => setPopoverOpen(true)}  // Open the popover on click
         >
           <CalendarIcon color="#C9CACC" className="mr-2 h-4 w-4" />
           {date ? format(date, "PPP") : <span>{text}</span>}
@@ -53,7 +57,7 @@ export function DatePicker({ text, selectedDate, setSelectedDate, departureDate 
         <Calendar
           mode="single"
           selected={date}  // Now it accepts 'undefined' without errors
-          onSelect={setDate}
+          onSelect={handleSelect}  // Close popover on date selection
           initialFocus
           disabled={isDisabled} // Disable past dates and illogical return dates
         />
