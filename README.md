@@ -7,6 +7,9 @@ lucide-icons for icons
 
 Nextjs Framework
 
+Tailwindcss for CSS
+
+TypeScript fro TypeSafety
 
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
