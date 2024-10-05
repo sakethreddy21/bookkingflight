@@ -62,3 +62,159 @@ export const flightdata={
       }
     ]
   }
+
+
+  export const flightDetails={
+    "flights":    [
+     
+        {
+          "arrival_airline": "Emirates",
+          "arrival_flight_number": "AT 4334",
+          "arrival_flight_arrival_time": "9:45 AM",
+          "arrival_flight_departure_time": "11:45 AM",
+          "arrival_flight_arrival_duration": "2h 10min",
+          "arrival_route": "CDG - DXB",
+          "arrival_stops": "Non stop",
+          "departure_airline": "Lufthansa",
+          "departure_flight_number": "AT 4334",
+          "departure_flight_departure_time": "9:45 AM",
+          "departure_flight_arrival_time": "11:45 AM",
+          "departure_flight_arrival_duration": "2h 10min",
+          "departure_duration": "2h 10min",
+          "departure_route": "CDG - DXB",
+          "departure_stops": "Non stop",
+          "total_price":'AED 2,456.90'
+        },
+        {
+          "arrival_airline": "Emirates",
+          "arrival_flight_number": "QR 2012",
+          "arrival_flight_arrival_time": "5:30 PM",
+          "arrival_flight_departure_time": "7:20 PM",
+          "arrival_flight_arrival_duration": "1h 50min",
+          "arrival_route": "LHR - DOH",
+          "arrival_stops": "1 stop",
+          "departure_airline": "Lufthansa",
+          "departure_flight_number": "BA 7843",
+          "departure_flight_departure_time": "6:00 PM",
+          "departure_flight_arrival_time": "8:30 PM",
+          "departure_flight_arrival_duration": "2h 30min",
+          "departure_duration": "2h 30min",
+          "departure_route": "LHR - DXB",
+          "departure_stops": "Non stop",
+          "total_price": "AED 3,210.50"
+        },
+        {
+          "arrival_airline": "Emirates",
+          "arrival_flight_number": "AT 4334",
+          "arrival_flight_arrival_time": "9:45 AM",
+          "arrival_flight_departure_time": "11:45 AM",
+          "arrival_flight_arrival_duration": "2h 10min",
+          "arrival_route": "CDG - DXB",
+          "arrival_stops": "Non stop",
+          "departure_airline": "Lufthansa",
+          "departure_flight_number": "AT 4334",
+          "departure_flight_departure_time": "9:45 AM",
+          "departure_flight_arrival_time": "11:45 AM",
+          "departure_flight_arrival_duration": "2h 10min",
+          "departure_duration": "2h 10min",
+          "departure_route": "CDG - DXB",
+          "departure_stops": "Non stop",
+          "total_price":'AED 2,456.90'
+        },
+        {
+          "arrival_airline": "Emirates",
+          "arrival_flight_number": "AT 4334",
+          "arrival_flight_arrival_time": "9:45 AM",
+          "arrival_flight_departure_time": "11:45 AM",
+          "arrival_flight_arrival_duration": "2h 10min",
+          "arrival_route": "CDG - DXB",
+          "arrival_stops": "Non stop",
+          "departure_airline": "Lufthansa",
+          "departure_flight_number": "AT 4334",
+          "departure_flight_departure_time": "9:45 AM",
+          "departure_flight_arrival_time": "11:45 AM",
+          "departure_flight_arrival_duration": "2h 10min",
+          "departure_duration": "2h 10min",
+          "departure_route": "CDG - DXB",
+          "departure_stops": "Non stop",
+          "total_price":'AED 2,456.90'
+        },
+        {
+          "arrival_airline": "Emirates",
+          "arrival_flight_number": "AT 4334",
+          "arrival_flight_arrival_time": "9:45 AM",
+          "arrival_flight_departure_time": "11:45 AM",
+          "arrival_flight_arrival_duration": "2h 10min",
+          "arrival_route": "CDG - DXB",
+          "arrival_stops": "Non stop",
+          "departure_airline": "Lufthansa",
+          "departure_flight_number": "AT 4334",
+          "departure_flight_departure_time": "9:45 AM",
+          "departure_flight_arrival_time": "11:45 AM",
+          "departure_flight_arrival_duration": "2h 10min",
+          "departure_duration": "2h 10min",
+          "departure_route": "CDG - DXB",
+          "departure_stops": "Non stop",
+          "total_price":'AED 2,456.90'
+        },
+        {
+          "arrival_airline": "Emirates",
+          "arrival_flight_number": "AT 4334",
+          "arrival_flight_arrival_time": "9:45 AM",
+          "arrival_flight_departure_time": "11:45 AM",
+          "arrival_flight_arrival_duration": "2h 10min",
+          "arrival_route": "CDG - DXB",
+          "arrival_stops": "Non stop",
+          "departure_airline": "Lufthansa",
+          "departure_flight_number": "AT 4334",
+          "departure_flight_departure_time": "9:45 AM",
+          "departure_flight_arrival_time": "11:45 AM",
+          "departure_flight_arrival_duration": "2h 10min",
+          "departure_duration": "2h 10min",
+          "departure_route": "CDG - DXB",
+          "departure_stops": "Non stop",
+          "total_price":'AED 2,456.90'
+          
+        },
+        {
+          "arrival_airline": "Emirates",
+          "arrival_flight_number": "AT 4334",
+          "arrival_flight_arrival_time": "9:45 AM",
+          "arrival_flight_departure_time": "11:45 AM",
+          "arrival_flight_arrival_duration": "2h 10min",
+          "arrival_route": "CDG - DXB",
+          "arrival_stops": "Non stop",
+          "departure_airline": "Lufthansa",
+          "departure_flight_number": "AT 4334",
+          "departure_flight_departure_time": "9:45 AM",
+          "departure_flight_arrival_time": "11:45 AM",
+          "departure_flight_arrival_duration": "2h 10min",
+          "departure_duration": "2h 10min",
+          "departure_route": "CDG - DXB",
+          "departure_stops": "Non stop",
+          "total_price":'AED 2,456.90'
+        },
+        {
+          "arrival_airline": "Emirates",
+          "arrival_flight_number": "AT 4334",
+          "arrival_flight_arrival_time": "9:45 AM",
+          "arrival_flight_departure_time": "11:45 AM",
+          "arrival_flight_arrival_duration": "2h 10min",
+          "arrival_route": "CDG - DXB",
+          "arrival_stops": "Non stop",
+          "departure_airline": "Lufthansa",
+          "departure_flight_number": "AT 4334",
+          "departure_flight_departure_time": "9:45 AM",
+          "departure_flight_arrival_time": "11:45 AM",
+          "departure_flight_arrival_duration": "2h 10min",
+          "departure_duration": "2h 10min",
+          "departure_route": "CDG - DXB",
+          "departure_stops": "Non stop",
+          "total_price":'AED 2,456.90'
+        },
+        
+      
+      ]
+  
+  }
+  

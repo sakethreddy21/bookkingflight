@@ -1,19 +1,28 @@
 "use client"
 import { Button } from '@/components/ui/button'
 import React, { useState } from 'react'
-import { AripotSelector } from './DropDownSelector'
 import { ArrowUpDown, Search } from 'lucide-react';
 import { flightdata } from '@/lib/constants'
 import { DatePicker } from './Datepicker';
 import { useRouter } from 'next/navigation';
+import AirportCombobox from './AirportSearchSelector';
+import { useSearchParams } from 'next/navigation';
 
-const SearchBar = () => {
+interface searchBarProps{
+  show?:Boolean
+}
+
+const SearchBar = ({show=true}:searchBarProps) => {
   const router = useRouter(); // Next.js router for navigation
-
-  const [fromAirport, setFromAirport] = useState("");
-  const [toAirport, setToAirport] = useState("");
-  const [departureDate, setDepartureDate] = useState<Date | null>(null);
-  const [returnDate, setReturnDate] = useState<Date | null>(null);
+const searchParams= useSearchParams()
+  const [fromAirport, setFromAirport] = useState(searchParams.get('fromCode') || '');
+  const [toAirport, setToAirport] = useState(searchParams.get('toCode') || '');
+  const [departureDate, setDepartureDate] = useState<Date | null>(
+    searchParams.get('departure') ? new Date(searchParams.get('departure') as string) : null
+  );
+  const [returnDate, setReturnDate] = useState<Date | null>(
+    searchParams.get('return') ? new Date(searchParams.get('return') as string) : null
+  );
 
   // Function to swap "from" and "to" values
   const swapAirports = () => {
@@ -23,6 +32,8 @@ const SearchBar = () => {
       return temp;         // swap "from" value to "to"
     });
   };
+
+  console.log(fromAirport)
 
   // Function to handle the search button click
   const handleSearch = () => {
@@ -57,15 +68,16 @@ const SearchBar = () => {
 
   return (
     <div className='flex flex-col gap-y-8'>
-      <Button className='w-[10%] bg-[#F5F7FA] text-[#000C0B] font-medium text-[16px] hover:bg-[#F5F7FA]'>Flights</Button>
+      {show &&   <Button className='w-[10%] bg-[#F5F7FA] text-[#000C0B] font-medium text-[16px] hover:bg-[#F5F7FA]'>Flights</Button> }
+    
       <div className='flex flex-row gap-[20px] items-center'>
         <div className='flex flex-row gap-[10px] items-center'>
-          <AripotSelector
-            placeholderText='Where From?'
-            airports={flightdata.airports}
-            selectedAirport={fromAirport}
-            setSelectedAirport={setFromAirport}  // function to update "from"
-          />
+        <AirportCombobox
+  placeholderText="Where from"
+  airports={flightdata.airports} // array of airports
+  selectedAirport={fromAirport}
+  setSelectedAirport={setFromAirport}
+/>
 
           <Button
             className='flex rounded-full bg-[#F5F7FA] hover:bg-[#F5F7FA] p-[10px] w-[52px] h-[52px]'
@@ -75,7 +87,7 @@ const SearchBar = () => {
           </Button>
 
           {/* "Where To" dropdown */}
-          <AripotSelector
+          <AirportCombobox
             placeholderText='Where To?'
             airports={flightdata.airports}
             selectedAirport={toAirport}

@@ -1,14 +1,14 @@
-'use client'; // Enable client-side behavior
-
+"use client"
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from "next/navigation";
-import { Progress } from "@/components/ui/progress";
-import { Separator } from "@/components/ui/separator";
-import { Button } from '@/components/ui/button';
-import { Search , X} from 'lucide-react';
-import Topbar from '../components/Topbar';
+import Topbar from '../../components/common/Topbar';
+import { Progress } from '@/components/ui/progress';
+export default function AirportLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
 
-const Page = () => {
     const searchParams = useSearchParams();
 
     const [isLoading, setIsLoading] = useState(true);
@@ -21,10 +21,6 @@ const Page = () => {
     const departure = searchParams.get('departure');
     const returnDate = searchParams.get('return');
 
-    // Function to truncate strings to 20 characters
-   
-
-    // Set a timer to stop loading after 5 seconds
     useEffect(() => {
         const interval = setInterval(() => {
             setProgress((prev) => {
@@ -40,18 +36,17 @@ const Page = () => {
         return () => clearInterval(interval); // Cleanup on unmount
     }, []);
 
-    // Render the actual page content after the 5-second delay
-    return (
-        <div className='flex flex-col w-full '>
-            <Topbar progress={progress} departure={departure} returnDate={returnDate} fromName={fromName} toName={toName} fromCode={fromCode} toCode={toCode}/>
-            {progress !== 100 && <Progress value={progress} className="w-[100%]" />}
-
-            <div className='w-full  px-40 p-4 pt-8 flex flex-col justify-between gap-y-4'>
-                <>jdkfjjf</>
-                <div className='w-full h-[184px] border-[#E6E8EB] border-2 rounded-lg'>ddk</div>
-            </div>
-        </div>
-    );
-};
-
-export default Page;
+  return (
+    <html lang="en">
+      <body
+       >
+        <div className='flex flex-col w-full ' style={{scrollbarWidth:'none'}}>  
+          <div className='z-[999999] fixed top-0 w-full '><Topbar progress={progress} departure={departure} returnDate={returnDate} fromName={fromName} toName={toName} fromCode={fromCode} toCode={toCode}/>
+          {progress !== 100 && <Progress value={progress} className="w-[100%]" />}</div>
+        
+{children}</div>
+      
+      </body> 
+    </html>
+  );
+}
