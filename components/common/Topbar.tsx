@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Separator } from "@/components/ui/separator";
 import { Button } from '@/components/ui/button';
 import { Search , X} from 'lucide-react';
-import ModifyFlightSearch from './ModifyFlightSearch';
+import ModifyFlightSearch from './ModifyFlightSearchModal';
 
 const Topbar = ({progress, departure, returnDate, fromCode, fromName, toCode, toName}:any) => {
     const truncateString = (str: string | null, maxLength: number) => {
@@ -46,7 +46,6 @@ className='w-[44px] h-[44px] p-1 bg-[#FFFFFF] flex justify-center items-center b
 </Button>
 
 <ModifyFlightSearch
-anchor='right'
 drawerOpen={drawerOpen}
 setDrawerOpen={setDrawerOpen}
 />

@@ -9,6 +9,11 @@ const AddDetailsDrawer = ({
   anchor,
   children,
   width,
+  height,
+  marginRight,
+  marginLeft,
+  marginTop,
+  margin,
   ...props
 }:any) => {
   const theme = useTheme();
@@ -23,13 +28,17 @@ const AddDetailsDrawer = ({
         sx={{ zIndex: (theme) => theme.zIndex.drawer + 1, ...props.sx }}
         PaperProps={{
           sx: {
+           
+            margin:margin,
+            
             width: width || '36%',
-            borderRadius: '0px',
+            borderRadius: '10px',
             '@media (max-width: 900px)': {
               width: '100%',
               maxHeight: "100%",
               borderRadius: '16px 16px 0px 0px',
             },
+            height:height 
           },
         }}
         ModalProps={{

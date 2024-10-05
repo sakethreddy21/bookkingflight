@@ -42,7 +42,7 @@ export default function AirportLayout({
        >
        
         <div className='flex flex-col w-full ' style={{scrollbarWidth:'none'}}>  
-          <div className='z-[999999] fixed top-0 w-full '>
+          <div className='z-[99] fixed top-0 w-full '>
           <Suspense fallback={<p>Loading feed...</p>}>
             <Topbar progress={progress} departure={departure} returnDate={returnDate} fromName={fromName} toName={toName} fromCode={fromCode} toCode={toCode}/>
           {progress !== 100 && <Progress value={progress} className="w-[100%]" />}

@@ -25,7 +25,7 @@ const LoadingModal = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 z-[99999] bg-black bg-opacity-50 flex items-center justify-center">
+    <div className="fixed inset-0 z-[99] bg-black bg-opacity-50 flex items-center justify-center">
       <div className="bg-white p-3 rounded-lg shadow-lg flex flex-col items-center h-[300px] w-[300px] gap-y-4">
         <div className="animate-bounce-horizontal">
           <LoadingIcon />

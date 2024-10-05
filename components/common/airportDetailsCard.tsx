@@ -1,9 +1,10 @@
 import Emirates from '@/components/icons/emirates'
 import React from 'react'
 import { Button } from '@/components/ui/button'
-
-
+import AirportDetalsModal from './AirportDetailsModal'
+import { useState } from 'react'
 const AirportDetailsCard = ({ flightData }:any) => {
+  const [drawerOpen, setDrawerOpen] = useState(false);
   return (
     <div className='flex flex-col gap-y-7'>
   {flightData.flights.map((flight:any, index:any) => (
@@ -51,10 +52,14 @@ const AirportDetailsCard = ({ flightData }:any) => {
     <div className='flex flex-col h-full justify-end p-4 w-[20%]'>
         <div className='text-[#787B80] text-[14px]'>from</div>
     <div className='text-[#001F1D] text-[20px]'>{flight.total_price}  </div> 
-    <Button>Select</Button>
+    <Button onClick={()=>{setDrawerOpen(true)} }>Select</Button>
     </div>
 </div>
   ))}
+  <AirportDetalsModal
+ 
+  drawerOpen={drawerOpen}
+  setDrawerOpen={setDrawerOpen}/>
 </div>
   )
 }

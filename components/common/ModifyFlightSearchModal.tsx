@@ -25,6 +25,7 @@ const [fromName, setFrom]=useState(searchParams.get('fromName') || '')
       open={drawerOpen}
       onClose={handleDrawerClose}
       width='100%'
+    
 
     >
      <div className='h-[225px]  w-[100%] flex justify-center items-center rounded-xl px-40 shadow-sm z-[9999] ' >
