@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import { useSearchParams } from "next/navigation";
 import Topbar from '../../components/common/Topbar';
 import { Progress } from '@/components/ui/progress';
@@ -40,12 +40,16 @@ export default function AirportLayout({
     <html lang="en">
       <body
        >
+       
         <div className='flex flex-col w-full ' style={{scrollbarWidth:'none'}}>  
-          <div className='z-[999999] fixed top-0 w-full '><Topbar progress={progress} departure={departure} returnDate={returnDate} fromName={fromName} toName={toName} fromCode={fromCode} toCode={toCode}/>
-          {progress !== 100 && <Progress value={progress} className="w-[100%]" />}</div>
+          <div className='z-[999999] fixed top-0 w-full '>
+          <Suspense fallback={<p>Loading feed...</p>}>
+            <Topbar progress={progress} departure={departure} returnDate={returnDate} fromName={fromName} toName={toName} fromCode={fromCode} toCode={toCode}/>
+          {progress !== 100 && <Progress value={progress} className="w-[100%]" />}
+          </Suspense></div>
         
 {children}</div>
-      
+
       </body> 
     </html>
   );
