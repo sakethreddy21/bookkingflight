@@ -1,7 +1,10 @@
 ## Tech Stack:
 useSWR hook for data fetching
+
 shadcn and materail ui fro UI 
+
 lucide-icons for icons
+
 Nextjs Framework
 
 
