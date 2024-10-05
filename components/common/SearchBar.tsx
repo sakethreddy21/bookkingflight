@@ -14,7 +14,7 @@ interface searchBarProps {
 }
 
 const SearchBar = ({ show = true, handleClose }: searchBarProps) => {
-  const { airports, flights, isLoading, hasError } = useFlightData();
+  const { airports } = useFlightData();
   
   const router = useRouter();
   const searchParams = useSearchParams();
