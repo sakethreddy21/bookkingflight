@@ -1,3 +1,11 @@
+## Tech Stack:
+useSWR hook for data fetching
+shadcn and materail ui fro UI 
+lucide-icons for icons
+Nextjs Framework
+
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
