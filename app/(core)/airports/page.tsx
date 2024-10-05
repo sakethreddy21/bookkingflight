@@ -2,9 +2,9 @@
 
 import React, { useEffect, useState } from 'react';
 
-import AirportDetailsCard from '../../../components/common/airportDetailsCard';
+import AirportDetailsCard from '../../../components/core/airportDetailsCard';
 import { flightDetails } from '@/lib/constants';
-import Loading from '../../../components/common/loadcontent'
+import Loading from '../../../components/core/loadingContent'
 export default function Airport() {
     // State to manage loading status
     const [isLoading, setIsLoading] = useState(true);
@@ -22,16 +22,16 @@ export default function Airport() {
     // Render the actual page content after the 5-second delay
     return (
         <div className='flex flex-col w-full pt-24 scrollbar-hide'>
-            {isLoading? <div ><Loading/></div>:<div className='w-full  px-[240px] p-4 pt-8 flex flex-col justify-between gap-y-4'>
+            {isLoading ? <div ><Loading /></div> : <div className='w-full  px-[240px] p-4 pt-8 flex flex-col justify-between gap-y-4'>
                 {/* Show loading text if loading, otherwise show the content */}
-               
-              
-                        <div>Showing 356 of 767 results</div>
-                        <AirportDetailsCard flightData={flightDetails} />
-                 
-             
+
+
+                <div>Showing 356 of 767 results</div>
+                <AirportDetailsCard flightData={flightDetails} />
+
+
             </div>}
-            
+
         </div>
     );
 }

@@ -5,7 +5,7 @@ import { ArrowUpDown, Search } from 'lucide-react';
 import { flightdata } from '@/lib/constants'
 import { DatePicker } from './Datepicker';
 import { useRouter } from 'next/navigation';
-import AirportCombobox from './AirportSearchSelector';
+import AirportCombobox from './AirportSearchBar';
 import { useSearchParams } from 'next/navigation';
 
 interface searchBarProps{
